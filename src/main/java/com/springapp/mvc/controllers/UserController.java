@@ -2,6 +2,7 @@ package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.dao.UserDao;
 import com.springapp.mvc.models.User;
+import com.springapp.mvc.validators.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -19,8 +21,11 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private UserValidator validator;
+
     @RequestMapping(value ="/",method = {RequestMethod.GET, RequestMethod.HEAD})
-    public String printWelcome(ModelMap model) {
+    public String printWelcome() {
         return "redirect:/users";
     }
 
@@ -30,7 +35,12 @@ public class UserController {
         return "index";
     }
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String createUser(@ModelAttribute("user") User user) throws SQLException, IOException, ClassNotFoundException {
+    public String createUser(@ModelAttribute("user") User user, BindingResult result, ModelMap model) throws SQLException, IOException, ClassNotFoundException {
+        validator.validate(user, result);
+        if(result.hasErrors()){
+            model.addAttribute("user",user);
+            return "new";
+        }
         userDao.create(user);
         return "redirect:/users";
     }
@@ -55,8 +65,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/edit/{userId}", method = RequestMethod.POST)
-    public String updateUser(@PathVariable("userId") Integer userId, @ModelAttribute("user") User user) throws SQLException, IOException, ClassNotFoundException {
-
+    public String updateUser(@PathVariable("userId") Integer userId, @ModelAttribute("user") User user, BindingResult result, ModelMap model) throws SQLException, IOException, ClassNotFoundException {
+        user.setId(userId);
+        validator.validate(user, result);
+        if(result.hasErrors()){
+            model.addAttribute("user",user);
+            return "new";
+        }
         userDao.update(user);
 
         return "redirect:/users";

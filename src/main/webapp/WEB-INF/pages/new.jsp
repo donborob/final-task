@@ -19,20 +19,28 @@
 <br>
 <form:form method="post" modelAttribute="user">
     <table>
+        <tr><form:errors path="firstname" cssClass="label label-important" /></tr>
         <tr>
             <td>First Name:</td>
+
             <td><form:input path="firstname" /></td>
         </tr>
+        <br>
+        <tr><form:errors path="lastname" cssClass="label label-important" /></tr>
+        <br>
         <tr>
             <td>Last Name:</td>
+
             <td><form:input path="lastname" /></td>
         </tr>
+        <tr><form:errors path="age" cssClass="label label-important" /></tr>
         <tr>
             <td>Age:</td>
             <td><form:input path="age" /></td>
         </tr>
         <tr>
             <td colspan="2">
+
                 <input type="submit" value="Create user" />
             </td>
         </tr>

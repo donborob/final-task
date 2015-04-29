@@ -29,8 +29,8 @@
 
     <bean id="config" class="com.springapp.mvc.config.DatabaseConfig">
     </bean>
-
-    <bean id="starter" class="Starter">
+    <bean id="validator" class="com.springapp.mvc.validators.UserValidator">
     </bean>
+    <context:component-scan base-package = "com.springapp.mvc.validators" />
 
 </beans>

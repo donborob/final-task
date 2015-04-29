@@ -31,10 +31,17 @@
         <c:forEach items="${users}" var="user">
             <tr>
                 <td>${user.id}</td>
-                <td><a href="/edit/${user.id}"> ${user.lastname} ${user.firstname}</a></td>
+                <td>${user.lastname} ${user.firstname}</td>
                 <td>${user.age}</td>
                 <td>
-                    <form action="delete/${user.id}"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
+                    <form action="/edit/${user.id}">
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
+                <td>
+                    <form action="delete/${user.id}">
+                        <input type="submit" class="btn btn-danger btn-mini" value="Delete"/>
+                    </form>
                 </td>
 
             </tr>
