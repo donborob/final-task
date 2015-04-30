@@ -13,13 +13,13 @@
     </bean>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="driverClassName" value="org.postgresql.Driver" />
-    <property name="url" value="jdbc:postgresql://localhost:5432/postgres" />
-    <property name="username" value="postgres" />
-    <property name="password" value="postgres" />
+    <property name="driverClassName" value="${jdbc.driverClassName}" />
+    <property name="url" value="${jdbc.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <context:property-placeholder location="classpath:derby.properties"/>
+    <context:property-placeholder location="classpath:postgres.properties"/>
 
     <bean id="operationManager" class="com.springapp.mvc.dao.manager.OperationManager">
     </bean>
@@ -29,7 +29,9 @@
 
     <bean id="config" class="com.springapp.mvc.config.DatabaseConfig">
     </bean>
-    <bean id="validator" class="com.springapp.mvc.validators.UserValidator">
+    <bean id="userValidator" class="com.springapp.mvc.validators.UserValidator">
+    </bean>
+    <bean id="orderValidator" class="com.springapp.mvc.validators.OrderValidator">
     </bean>
     <context:component-scan base-package = "com.springapp.mvc.validators" />
 

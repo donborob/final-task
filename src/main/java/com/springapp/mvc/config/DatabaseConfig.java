@@ -20,24 +20,31 @@ import java.sql.SQLException;
  * Created by boro on 23.03.15.
  */
 @WebAppConfiguration
-public class DatabaseConfig extends WebMvcConfigurerAdapter {
-    @Bean
-    public ViewResolver getViewResolver(){
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
+public class DatabaseConfig{
 
     @Value("${jdbc.url}")
     private String dbUrl;
+
+    @Value("${jdbc.username}")
+    private String dbUserName;
+
+    @Value("${jdbc.password}")
+    private String dbPassword;
 
     public String getDbUrl() throws ClassNotFoundException, SQLException {
         return dbUrl;
     }
 
+    public String getDbUserName() {
+        return dbUserName;
+    }
+
+    public String getDbPassword() {
+        return dbPassword;
+    }
+
     @Bean
     public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(dbUrl,"postgres","postgres");
+        return DriverManager.getConnection(dbUrl,dbUserName, dbPassword);
     }
 }

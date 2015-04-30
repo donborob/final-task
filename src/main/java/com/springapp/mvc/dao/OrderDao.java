@@ -39,7 +39,7 @@ public class OrderDao implements Dao<Order> {
     @Override
     public Order get(int id) throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
-        String sql = "SELECT sellerId,customerId,totalAmount FROM ORDERS WHERE id = " + id;
+        String sql = "SELECT * FROM ORDERS WHERE id = " + id;
         Order order = (Order) jdbcTemplate.query(sql, new OrderMapper()).get(0);
         operationManager.closeConnection();
         return order;
@@ -58,7 +58,7 @@ public class OrderDao implements Dao<Order> {
     public void update(Order order) throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
         getCount();
-        String sql = "UPDATE ORDERS SET sellerId = ?, customerId = ?,  totalAount = ?  WHERE id = ?";
+        String sql = "UPDATE ORDERS SET sellerId = ?, customerId = ?,  totalAmount = ?  WHERE id = ?";
         jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount(), order.getId());
 
         operationManager.closeConnection();
