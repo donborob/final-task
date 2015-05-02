@@ -93,4 +93,12 @@ public class UserDao implements Dao<User> {
         operationManager.closeConnection();
         return count;
     }
+
+    public User findByUserName(String username) throws SQLException, IOException, ClassNotFoundException {
+        operationManager.setConnection();
+        String sql = "SELECT * FROM USERS WHERE id = " + username;
+        User user = (User) jdbcTemplate.query(sql, new UserMapper()).get(0);
+        operationManager.closeConnection();
+        return user;
+    }
 }

@@ -18,6 +18,7 @@ public class UserMapper implements RowMapper {
         user.setFirstname(resultSet.getString("FIRSTNAME"));
         user.setLastname(resultSet.getString("LASTNAME"));
         user.setAge(resultSet.getInt("AGE"));
+
         return user;
     }
 }
