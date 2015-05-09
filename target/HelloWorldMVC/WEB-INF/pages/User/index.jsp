@@ -15,13 +15,12 @@
         <div class="span8 offset2">
             <c:if test="${!empty users}">
                 <h3>Users</h3>
-                <table class="table table-bordered table-striped">
+                <table border = "1", style="border: solid black 1px;">
                     <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
                         <th>Age</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +45,8 @@
                     </tbody>
                 </table>
             </c:if>
+            <br>
+            <br>
             <a href="/user/new"> New User </a>
         </div>
     </div>

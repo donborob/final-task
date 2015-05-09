@@ -15,20 +15,21 @@
         <div class="span8 offset2">
             <c:if test="${!empty orders}">
                 <h3>Orders</h3>
-                <table class="table table-bordered table-striped">
+                <table border = "1", style="border: solid black 1px;">
                     <thead>
                     <tr>
-                        <th>SellerId</th>
-                        <th>CustomerId</th>
+                        <th>Id Name</th>
+                        <th>Seller Name</th>
+                        <th>Customer Name</th>
                         <th>totalAmount</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${orders}" var="order">
                         <tr>
-                            <td>${order.sellerId}</td>
-                            <td>${order.customerId}</td>
+                            <td>${order.id}</td>
+                            <td>${map.get(order.sellerId)}</td>
+                            <td>${map.get(order.customerId)}</td>
                             <td>${order.totalAmount}</td>
                             <td>
                                 <form action="/order/edit/${order.id}">
@@ -37,7 +38,7 @@
                             </td>
                             <td>
                                 <form action="/order/delete/${order.id}">
-                                    <input type="submit" class="btn btn-danger btn-mini" value="Delete"/>
+                                    <input type="submit" value="Delete">
                                 </form>
                             </td>
 
@@ -45,6 +46,8 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <br>
+                <br>
             </c:if>
             <a href="/order/new"> New Order </a>
         </div>

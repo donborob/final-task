@@ -12,7 +12,7 @@
 <h2>New User</h2>
 <br>
 <form:form method="post" modelAttribute="user">
-    <table>
+    <table border = "1", style="border: solid black 1px;">
         <tr><form:errors path="firstname" cssClass="label label-important" /></tr>
         <tr>
             <td>First Name:</td>

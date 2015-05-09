@@ -14,11 +14,15 @@ public class UserValidator implements Validator {
     }
 
     public void validate(Object obj, Errors e) {
-        ValidationUtils.rejectIfEmpty(e, "firstname", "name.empty","First Name can't be blank");
-        ValidationUtils.rejectIfEmpty(e, "lastname", "name.empty","Last Name can't be blank");
-       User user = (User) obj;
-        if (user.getAge() <= 0 || !((Integer) user.getAge() instanceof Integer)) {
-            e.rejectValue("age", "negativevalue", "Wrong age format");
+        ValidationUtils.rejectIfEmpty(e, "firstname", "name.empty", "First Name can't be blank");
+        ValidationUtils.rejectIfEmpty(e, "lastname", "name.empty", "Last Name can't be blank");
+        User user = (User) obj;
+        try {
+            if ((user.getAge() <= 0)) {
+                e.rejectValue("age", "negativevalue", "Negative age value");
+            }
+        } catch (NumberFormatException e1) {
+            e.rejectValue("age", "wrong.format", "Wrong age format");
         }
     }
 }

@@ -11,20 +11,27 @@
 <h2>New Order</h2>
 <br>
 <form:form method="post" modelAttribute="order">
-    <table>
+    <table style="border: solid black 1px;">
         <tr><form:errors path="sellerId" cssClass="label label-important" /></tr>
         <tr>
             <td>Seller Id:</td>
 
-            <td><form:input path="sellerId" /></td>
+            <td> <form:select path="sellerId">
+                <c:forEach var="user" items="${users}">
+                    <form:option value= "${user.id}" label="${user.firstname} ${user.lastname}" />
+                </c:forEach>
+            </form:select> </td>
         </tr>
         <br>
         <tr><form:errors path="customerId" cssClass="label label-important" /></tr>
         <br>
         <tr>
             <td>Customer Id:</td>
-
-            <td><form:input path="customerId" /></td>
+            <td> <form:select path="customerId">
+                <c:forEach var="user" items="${users}">
+                    <form:option value="${user.id}" label="${user.firstname} ${user.lastname}" />
+                </c:forEach>
+            </form:select> </td>
         </tr>
         <tr><form:errors path="totalAmount" cssClass="label label-important" /></tr>
         <tr>
