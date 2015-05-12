@@ -27,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="HelloWorldMVC" target="1.6" />
+      <module name="HelloWorldMVC" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
