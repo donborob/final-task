@@ -30,18 +30,34 @@ public class OrderDao implements Dao<Order> {
 
     @Override
     public void create(Order order) throws IOException, SQLException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
+        operationManager.setConnection();
         String sql = "INSERT INTO ORDERS VALUES (DEFAULT,?,?,?)";
-        jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount());
-        operationManager.closeConnection();
+        try {
+            jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+       finally {
+            operationManager.closeConnection();
+        }
+
     }
 
     @Override
     public Order get(int id) throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
         String sql = "SELECT * FROM ORDERS WHERE id = " + id;
-        Order order = (Order) jdbcTemplate.query(sql, new OrderMapper()).get(0);
-        operationManager.closeConnection();
+        Order order = null;
+        try {
+            order = (Order) jdbcTemplate.query(sql, new OrderMapper()).get(0);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return order;
     }
 
@@ -49,8 +65,16 @@ public class OrderDao implements Dao<Order> {
     public List<Order> getAll() throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
         String sql = "SELECT * FROM ORDERS";
-        List<Order> orders = jdbcTemplate.query(sql, new OrderMapper());
-        operationManager.closeConnection();
+        List<Order> orders = null;
+        try {
+          orders = jdbcTemplate.query(sql, new OrderMapper());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return orders;
     }
 
@@ -59,25 +83,46 @@ public class OrderDao implements Dao<Order> {
         Connection connection = operationManager.setConnection();
         getCount();
         String sql = "UPDATE ORDERS SET sellerId = ?, customerId = ?,  totalAmount = ?  WHERE id = ?";
-        jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount(), order.getId());
-
-        operationManager.closeConnection();
+        try {
+            jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount(), order.getId());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
     }
 
     @Override
     public void delete(int id) throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
         String sql = "DELETE FROM  ORDERS WHERE id = ?";
-        jdbcTemplate.update(sql, id);
-        operationManager.closeConnection();
+        try {
+            jdbcTemplate.update(sql, id);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
     }
 
     @Override
     public int getCount() throws SQLException, IOException, ClassNotFoundException {
         Connection connection = operationManager.setConnection();
         String sql = "SELECT COUNT (*) FROM  ORDERS";
-        int count = jdbcTemplate.queryForObject(sql, Integer.class);
-        operationManager.closeConnection();
+        int count = 0;
+        try {
+           count = jdbcTemplate.queryForObject(sql, Integer.class);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return count;
     }
 }

@@ -4,6 +4,7 @@ import com.springapp.mvc.config.DatabaseConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,16 +15,13 @@ import java.sql.SQLException;
  */
 @Repository
 public class OperationManager{
-    @Autowired
     private Connection connection;
 
     @Autowired
-    private DatabaseConfig config;
+    private DataSource dataSource;
 
     public Connection setConnection() throws IOException, SQLException, ClassNotFoundException {
-        if (connection.isClosed()){
-            connection = DriverManager.getConnection(config.getDbUrl(),"postgres","postgres");
-        }
+        connection = dataSource.getConnection();
         return connection;
     }
 

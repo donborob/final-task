@@ -41,16 +41,31 @@ public class UserDao implements Dao<User> {
         map.put("firstname", user.getFirstname());
         map.put("lastname", user.getLastname());
         map.put("age", user.getAge());
-        jdbcTemplate.update(sql, map) ;
-        operationManager.closeConnection();
+        try {
+            jdbcTemplate.update(sql, map) ;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
     }
 
     @Override
     public User get(int id) throws SQLException, IOException, ClassNotFoundException {
         operationManager.setConnection();
         String sql = "SELECT * FROM USERS WHERE id = " + id;
-        User user = (User) jdbcTemplate.query(sql, new UserMapper()).get(0);
-        operationManager.closeConnection();
+        User user = null;
+        try {
+         user = (User) jdbcTemplate.query(sql, new UserMapper()).get(0);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return user;
     }
 
@@ -58,8 +73,16 @@ public class UserDao implements Dao<User> {
     public List<User> getAll() throws SQLException, IOException, ClassNotFoundException {
         operationManager.setConnection();
         String sql = "SELECT * FROM USERS";
-        List<User> users = jdbcTemplate.query(sql, new UserMapper());
-        operationManager.closeConnection();
+        List<User> users = null;
+        try {
+            users = jdbcTemplate.query(sql, new UserMapper()) ;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return users;
     }
 
@@ -71,9 +94,17 @@ public class UserDao implements Dao<User> {
         map.put("lastname", user.getLastname());
         map.put("age", user.getAge());
         map.put("id",user.getId());
-        jdbcTemplate.update(sql,map) ;
 
-        operationManager.closeConnection();
+
+        try {
+            jdbcTemplate.update(sql, map) ;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
     }
 
     @Override
@@ -81,16 +112,31 @@ public class UserDao implements Dao<User> {
         operationManager.setConnection();
         String sql = "DELETE FROM  USERS WHERE id = :id";
         map.put("id",id);
-        jdbcTemplate.update(sql,map) ;
-        operationManager.closeConnection();
+        try {
+            jdbcTemplate.update(sql,map) ;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
     }
 
     @Override
     public int getCount() throws SQLException, IOException, ClassNotFoundException {
         operationManager.setConnection();
         String sql = "SELECT COUNT (*) FROM  USERS";
-        int count = jdbcTemplate.queryForObject(sql,map, Integer.class);
-        operationManager.closeConnection();
+       int  count = 0;
+        try {
+           count = jdbcTemplate.queryForObject(sql,map, Integer.class);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            operationManager.closeConnection();
+        }
         return count;
     }
 }
