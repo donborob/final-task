@@ -18,7 +18,7 @@
                 <table border = "1", style="border: solid black 1px;">
                     <thead>
                     <tr>
-                        <th>Id Name</th>
+                        <th>Id</th>
                         <th>Seller Name</th>
                         <th>Customer Name</th>
                         <th>totalAmount</th>
