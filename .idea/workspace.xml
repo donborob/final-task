@@ -95,41 +95,41 @@
       <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/OrderDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1435" max-vertical-offset="1815">
-              <caret line="115" column="6" selection-start-line="115" selection-start-column="6" selection-end-line="125" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="963" max-vertical-offset="1395">
+              <caret line="77" column="89" selection-start-line="77" selection-start-column="89" selection-end-line="77" selection-end-column="89" />
               <folding>
-                <marker date="1431784872043" expanded="true" signature="970:1011" placeholder="INSERT INTO ..." />
-                <marker date="1431784872043" expanded="true" signature="1489:1521" placeholder="SELECT * FRO..ORDERS..." />
-                <marker date="1431784872043" expanded="true" signature="2030:2050" placeholder="SELECT * FRO..ORDERS..." />
-                <marker date="1431784872043" expanded="true" signature="2570:2648" placeholder="UPDATE ORDER..." />
-                <marker date="1431784872043" expanded="true" signature="3143:3175" placeholder="DELETE FROM ..." />
-                <marker date="1431784872043" expanded="true" signature="3586:3615" placeholder="SELECT COUNT..ORDERS..." />
+                <marker date="1431786307991" expanded="true" signature="873:914" placeholder="INSERT INTO ..." />
+                <marker date="1431786307991" expanded="true" signature="1251:1283" placeholder="SELECT * FRO..ORDERS..." />
+                <marker date="1431786307991" expanded="true" signature="1650:1670" placeholder="SELECT * FRO..ORDERS..." />
+                <marker date="1431786307991" expanded="true" signature="2028:2106" placeholder="UPDATE ORDER..." />
+                <marker date="1431786307991" expanded="true" signature="2459:2491" placeholder="DELETE FROM ..." />
+                <marker date="1431786307991" expanded="true" signature="2760:2789" placeholder="SELECT COUNT..ORDERS..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="2025">
-              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+            <state vertical-scroll-proportion="1.2105263" vertical-offset="1025" max-vertical-offset="1635">
+              <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
               <folding>
-                <marker date="1431785114891" expanded="true" signature="1145:1205" placeholder="INSERT INTO ..." />
-                <marker date="1431785114891" expanded="true" signature="2241:2260" placeholder="SELECT * FRO..USERS..." />
-                <marker date="1431785114891" expanded="true" signature="2732:2823" placeholder="UPDATE USERS..." />
-                <marker date="1431785114891" expanded="true" signature="3394:3427" placeholder="DELETE FROM ..." />
-                <marker date="1431785114891" expanded="true" signature="3841:3869" placeholder="SELECT COUNT..USERS..." />
+                <marker date="1431786308011" expanded="true" signature="1049:1109" placeholder="INSERT INTO ..." />
+                <marker date="1431786308011" expanded="true" signature="1909:1928" placeholder="SELECT * FRO..USERS..." />
+                <marker date="1431786308011" expanded="true" signature="2282:2373" placeholder="UPDATE USERS..." />
+                <marker date="1431786308011" expanded="true" signature="2826:2859" placeholder="DELETE FROM ..." />
+                <marker date="1431786308011" expanded="true" signature="3155:3183" placeholder="SELECT COUNT..USERS..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/config/DatabaseConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16030534" vertical-offset="177" max-vertical-offset="570">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,7 +138,7 @@
       <file leaf-file-name="OperationManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/manager/OperationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="495">
               <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
@@ -1193,12 +1193,12 @@
       <workItem from="1431064911669" duration="9517000" />
       <workItem from="1431163183118" duration="5991000" />
       <workItem from="1431778111888" duration="118000" />
-      <workItem from="1431784269630" duration="1013000" />
+      <workItem from="1431784269630" duration="2292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115879000" />
+    <option name="totallyTimeSpent" value="117158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
@@ -1222,7 +1222,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35384616" sideWeight="0.8283753" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35384616" sideWeight="0.8283753" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3430769" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24942791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1615,6 +1615,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/config/DatabaseConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/manager/OperationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="495">
@@ -1625,38 +1633,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/OrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1435" max-vertical-offset="1815">
-          <caret line="115" column="6" selection-start-line="115" selection-start-column="6" selection-end-line="125" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="963" max-vertical-offset="1395">
+          <caret line="77" column="89" selection-start-line="77" selection-start-column="89" selection-end-line="77" selection-end-column="89" />
           <folding>
-            <marker date="1431784872043" expanded="true" signature="970:1011" placeholder="INSERT INTO ..." />
-            <marker date="1431784872043" expanded="true" signature="1489:1521" placeholder="SELECT * FRO..ORDERS..." />
-            <marker date="1431784872043" expanded="true" signature="2030:2050" placeholder="SELECT * FRO..ORDERS..." />
-            <marker date="1431784872043" expanded="true" signature="2570:2648" placeholder="UPDATE ORDER..." />
-            <marker date="1431784872043" expanded="true" signature="3143:3175" placeholder="DELETE FROM ..." />
-            <marker date="1431784872043" expanded="true" signature="3586:3615" placeholder="SELECT COUNT..ORDERS..." />
+            <marker date="1431786307991" expanded="true" signature="873:914" placeholder="INSERT INTO ..." />
+            <marker date="1431786307991" expanded="true" signature="1251:1283" placeholder="SELECT * FRO..ORDERS..." />
+            <marker date="1431786307991" expanded="true" signature="1650:1670" placeholder="SELECT * FRO..ORDERS..." />
+            <marker date="1431786307991" expanded="true" signature="2028:2106" placeholder="UPDATE ORDER..." />
+            <marker date="1431786307991" expanded="true" signature="2459:2491" placeholder="DELETE FROM ..." />
+            <marker date="1431786307991" expanded="true" signature="2760:2789" placeholder="SELECT COUNT..ORDERS..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="2025">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        <state vertical-scroll-proportion="1.2105263" vertical-offset="1025" max-vertical-offset="1635">
+          <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
           <folding>
-            <marker date="1431785114891" expanded="true" signature="1145:1205" placeholder="INSERT INTO ..." />
-            <marker date="1431785114891" expanded="true" signature="2241:2260" placeholder="SELECT * FRO..USERS..." />
-            <marker date="1431785114891" expanded="true" signature="2732:2823" placeholder="UPDATE USERS..." />
-            <marker date="1431785114891" expanded="true" signature="3394:3427" placeholder="DELETE FROM ..." />
-            <marker date="1431785114891" expanded="true" signature="3841:3869" placeholder="SELECT COUNT..USERS..." />
+            <marker date="1431786308011" expanded="true" signature="1049:1109" placeholder="INSERT INTO ..." />
+            <marker date="1431786308011" expanded="true" signature="1909:1928" placeholder="SELECT * FRO..USERS..." />
+            <marker date="1431786308011" expanded="true" signature="2282:2373" placeholder="UPDATE USERS..." />
+            <marker date="1431786308011" expanded="true" signature="2826:2859" placeholder="DELETE FROM ..." />
+            <marker date="1431786308011" expanded="true" signature="3155:3183" placeholder="SELECT COUNT..USERS..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/config/DatabaseConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16030534" vertical-offset="177" max-vertical-offset="570">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>

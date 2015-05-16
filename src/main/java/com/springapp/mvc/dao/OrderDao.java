@@ -18,9 +18,6 @@ import java.util.List;
  */
 @Repository
 public class OrderDao implements Dao<Order> {
-    @Autowired
-    OperationManager operationManager;
-
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -30,7 +27,6 @@ public class OrderDao implements Dao<Order> {
 
     @Override
     public void create(Order order) throws IOException, SQLException, ClassNotFoundException {
-        operationManager.setConnection();
         String sql = "INSERT INTO ORDERS VALUES (DEFAULT,?,?,?)";
         try {
             jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount());
@@ -38,15 +34,11 @@ public class OrderDao implements Dao<Order> {
         catch (Exception e){
             e.printStackTrace();
         }
-       finally {
-            operationManager.closeConnection();
-        }
 
     }
 
     @Override
     public Order get(int id) throws SQLException, IOException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
         String sql = "SELECT * FROM ORDERS WHERE id = " + id;
         Order order = null;
         try {
@@ -55,15 +47,11 @@ public class OrderDao implements Dao<Order> {
         catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            operationManager.closeConnection();
-        }
         return order;
     }
 
     @Override
     public List<Order> getAll() throws SQLException, IOException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
         String sql = "SELECT * FROM ORDERS";
         List<Order> orders = null;
         try {
@@ -72,16 +60,11 @@ public class OrderDao implements Dao<Order> {
         catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            operationManager.closeConnection();
-        }
         return orders;
     }
 
     @Override
     public void update(Order order) throws SQLException, IOException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
-        getCount();
         String sql = "UPDATE ORDERS SET sellerId = ?, customerId = ?,  totalAmount = ?  WHERE id = ?";
         try {
             jdbcTemplate.update(sql, order.getSellerId(), order.getCustomerId(), order.getTotalAmount(), order.getId());
@@ -89,14 +72,10 @@ public class OrderDao implements Dao<Order> {
         catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            operationManager.closeConnection();
-        }
     }
 
     @Override
     public void delete(int id) throws SQLException, IOException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
         String sql = "DELETE FROM  ORDERS WHERE id = ?";
         try {
             jdbcTemplate.update(sql, id);
@@ -104,14 +83,10 @@ public class OrderDao implements Dao<Order> {
         catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            operationManager.closeConnection();
-        }
     }
 
     @Override
     public int getCount() throws SQLException, IOException, ClassNotFoundException {
-        Connection connection = operationManager.setConnection();
         String sql = "SELECT COUNT (*) FROM  ORDERS";
         int count = 0;
         try {
@@ -119,9 +94,6 @@ public class OrderDao implements Dao<Order> {
         }
         catch (Exception e){
             e.printStackTrace();
-        }
-        finally {
-            operationManager.closeConnection();
         }
         return count;
     }
