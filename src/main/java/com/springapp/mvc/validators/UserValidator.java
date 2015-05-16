@@ -1,6 +1,7 @@
 package com.springapp.mvc.validators;
 
 import com.springapp.mvc.models.User;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -8,6 +9,7 @@ import org.springframework.validation.Validator;
 /**
  * Created by boro on 29.04.15.
  */
+@Component
 public class UserValidator implements Validator {
     public boolean supports(Class clazz) {
         return User.class.equals(clazz);

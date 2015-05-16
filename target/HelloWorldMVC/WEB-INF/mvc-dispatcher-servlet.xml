@@ -24,15 +24,7 @@
     <bean id="operationManager" class="com.springapp.mvc.dao.manager.OperationManager">
     </bean>
 
-    <context:component-scan base-package="com.springapp.mvc.config"/>
     <context:annotation-config/>
-
-    <bean id="config" class="com.springapp.mvc.config.DatabaseConfig">
-    </bean>
-    <bean id="userValidator" class="com.springapp.mvc.validators.UserValidator">
-    </bean>
-    <bean id="orderValidator" class="com.springapp.mvc.validators.OrderValidator">
-    </bean>
-    <context:component-scan base-package = "com.springapp.mvc.validators" />
+    <context:component-scan base-package = "com.springapp.mvc" />
 
 </beans>

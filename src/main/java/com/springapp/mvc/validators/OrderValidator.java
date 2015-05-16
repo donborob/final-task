@@ -4,6 +4,7 @@ import com.springapp.mvc.dao.UserDao;
 import com.springapp.mvc.models.Order;
 import com.springapp.mvc.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 /**
  * Created by boro on 30.04.15.
  */
+@Component
 public class OrderValidator {
     @Autowired
     private UserDao userDao;
